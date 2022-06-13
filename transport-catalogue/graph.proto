@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package proto_graph;
+
+message Edge {
+    uint32 from_id = 1;
+    uint32 to_id = 2;
+    double weight = 3;
+    uint32 span_count = 4;
+    uint32 bus_id = 5;
+}
+
+message Graph {
+    repeated Edge edges = 1; //[edge_id, Edge]
+    uint32 vertex_count = 2;
+}
