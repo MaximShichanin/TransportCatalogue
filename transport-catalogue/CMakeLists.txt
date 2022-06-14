@@ -11,7 +11,8 @@ protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS graph.proto
                                             svg.proto
                                             transport_catalogue.proto
                                             transport_router.proto)
-
+message(STATIC "Proto srcs: " ${PROTO_SRCS})
+message(STATIC "Proto hdrs: " ${PROTO_HDRS})
 set(PATHFINDER_FILES domain.h domain.cpp
                      geo.h geo.cpp
                      graph.h graph.proto

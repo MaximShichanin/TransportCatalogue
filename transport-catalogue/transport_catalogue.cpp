@@ -2,6 +2,18 @@
 
 using namespace transport_catalogue;
 
+[[nodiscard]] domain::Bus& TransportCatalogue::TransportCatalogueIterator::operator*() {
+    return *BusContainer::const_iterator::operator*().second;
+}
+
+[[nodiscard]] domain::Bus* TransportCatalogue::TransportCatalogueIterator::operator->() {
+    return BusContainer::const_iterator::operator*().second.get();
+}
+
+size_t TransportCatalogue::pair_hash::operator()(const std::pair<int, int>& p) const {
+    return std::hash<int>()(p.first) ^ std::hash<int>()(p.second);
+}
+
 TransportCatalogue::TransportCatalogue(const transport_base::TransportCatalogue& base) {
     using proto_type = transport_base::Bus;
     using domain_type = domain::ROUTE_TYPE;

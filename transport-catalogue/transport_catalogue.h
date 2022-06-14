@@ -16,18 +16,12 @@ private:
     
     class TransportCatalogueIterator final : public BusContainer::const_iterator {
     public:
-        [[nodiscard]] domain::Bus& operator*() {
-            return *BusContainer::const_iterator::operator*().second;
-        }
-        [[nodiscard]] domain::Bus* operator->() {
-            return BusContainer::const_iterator::operator*().second.get();
-        }
+        [[nodiscard]] domain::Bus& operator*();
+        [[nodiscard]] domain::Bus* operator->();
     };
     
     struct pair_hash { 
-        size_t operator()(const std::pair<int, int>& p) const {
-            return std::hash<int>()(p.first) ^ std::hash<int>()(p.second);
-        }
+        size_t operator()(const std::pair<int, int>& p) const;
     };
 public:
     //ctors
