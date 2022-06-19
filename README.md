@@ -42,7 +42,7 @@ information from program.
 For more information see doc and example_mb.json, example_mb.json and answer.json
 files.
 
-What to impruve?
+What to improve?
 ---------------
 
 May adds a rendering found path on routes
