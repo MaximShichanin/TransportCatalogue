@@ -39,7 +39,8 @@ There is some major query keys to program: "base_requests" - to add
 information about stops and routes in catalogue, "renderer_settings" and
 "routing_settings" - to configure program, "stat_requests" - to get
 information from program.
-For more information see example_mb.json, example_mb.json and answer.json files.
+For more information see doc and example_mb.json, example_mb.json and answer.json
+files.
 
 What to impruve?
 ---------------
