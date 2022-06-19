@@ -26,10 +26,16 @@ private:
 public:
     //ctors
     TransportCatalogue() = default;
+    TransportCatalogue(const TransportCatalogue&) = delete;
+    TransportCatalogue(TransportCatalogue&&) = default;
     TransportCatalogue(const transport_base::TransportCatalogue& base);
     TransportCatalogue(transport_base::TransportCatalogue&& base);
-    void operator=(const transport_base::TransportCatalogue&) = delete;
-    void operator=(transport_base::TransportCatalogue&& base);
+    TransportCatalogue& operator=(const TransportCatalogue&) = delete;
+    TransportCatalogue& operator=(TransportCatalogue&&) = default;
+    TransportCatalogue& operator=(const transport_base::TransportCatalogue&) = delete;
+    TransportCatalogue& operator=(transport_base::TransportCatalogue&& base);
+    
+    ~TransportCatalogue() = default;
     
     //stop methods
     int AddStop(std::string_view name, geo::Coordinates&& coordinates = {}); //returns id of inserted Stop, or -1 if insertion falls

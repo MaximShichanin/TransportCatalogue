@@ -13,6 +13,7 @@ cmake version 3.10 or higher (https://cmake.org/)
 protobuf version 3.20 or higher (https://developers.google.com/protocol-buffers)
 
 To build the app follow steps:
+
 0. mkdir ./build
 1. cmake ../src -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=<path_to_protobuf_dir>
 2. cmake --build ./

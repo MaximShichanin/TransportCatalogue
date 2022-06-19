@@ -9,6 +9,10 @@ decltype(auto) SortCatalogue(const transport_catalogue::TransportCatalogue& tc) 
     return sorted_catalogue;
 }
 
+MapRenderer::MapRenderer() {
+    SetDefaultObjects();
+}
+
 MapRenderer::MapRenderer(const transport_base::TransportCatalogue& base) {
     const auto& proto_settings = base.mr_settings();
     settings_.width = proto_settings.width();

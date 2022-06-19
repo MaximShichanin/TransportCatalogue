@@ -8,8 +8,16 @@ namespace map_renderer {
 
 class MapRenderer {
 public:
-    MapRenderer() = default;
+    MapRenderer();
     MapRenderer(const transport_base::TransportCatalogue& base);
+    MapRenderer(const MapRenderer&) = delete;
+    MapRenderer(MapRenderer&&) = default;
+    
+    MapRenderer& operator=(const MapRenderer&) = delete;
+    MapRenderer& operator=(MapRenderer&&) = default;
+    
+    ~MapRenderer() = default;
+    
     void SetRenderer(domain::MapRendererSettings&& settings);
     operator transport_base::TransportCatalogue() const;
 

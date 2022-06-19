@@ -44,7 +44,7 @@ public:
 class RequestHandlerDeserializer : public RequestHandler {
 public:
     RequestHandlerDeserializer();
-    //~RequestHandlerDeserializer();
+    ~RequestHandlerDeserializer();
 };
 
 template<typename RequestType, typename... Contents>

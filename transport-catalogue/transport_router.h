@@ -9,7 +9,14 @@ namespace transport_router {
 class TransportRouter {
 public:
     TransportRouter() = default;
+    TransportRouter(const TransportRouter&) = delete;
+    TransportRouter(TransportRouter&&) = default;
     TransportRouter(const transport_base::TransportCatalogue& base);
+    
+    TransportRouter& operator=(const TransportRouter&) = delete;
+    TransportRouter& operator=(TransportRouter&&) = default;
+    
+    ~TransportRouter() = default;
     
     void SetRouter(domain::TransportRouterSettings&& settings);
     std::optional<domain::RouteInfo> BuildRoute(std::optional<std::reference_wrapper<const domain::Stop>> from,

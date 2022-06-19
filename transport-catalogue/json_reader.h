@@ -10,8 +10,16 @@ namespace json_reader {
 
 class JsonReader {
 public:
+    JsonReader() = delete;
+    JsonReader(const JsonReader&) = delete;
+    JsonReader(JsonReader&&) = delete;
     JsonReader(std::istream& input, RequestHandler& request_handler);
     JsonReader(json::Document&& input, RequestHandler& request_handler);
+    
+    JsonReader& operator=(const JsonReader&) = delete;
+    JsonReader& operator=(JsonReader&&) = delete;
+    
+    ~JsonReader() = default;
     
     void GetResult(std::ostream& out) const;
 private:

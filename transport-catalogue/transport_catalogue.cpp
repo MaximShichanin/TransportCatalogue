@@ -40,7 +40,7 @@ TransportCatalogue::TransportCatalogue(const transport_base::TransportCatalogue&
     }
 }
 
-void TransportCatalogue::operator=(transport_base::TransportCatalogue&& base) {
+TransportCatalogue& TransportCatalogue::operator=(transport_base::TransportCatalogue&& base) {
     using proto_type = transport_base::Bus;
     using domain_type = domain::ROUTE_TYPE;
 
@@ -65,6 +65,7 @@ void TransportCatalogue::operator=(transport_base::TransportCatalogue&& base) {
                              next_bus.route_type() == proto_type::LINEAR ? domain_type::LINEAR : domain_type::CIRCLE,
                              std::move(stops_on_route));
     }
+    return *this;
 }
 
 int TransportCatalogue::AddStop(std::string_view name, geo::Coordinates&& coordinates) {

@@ -9,10 +9,9 @@ RequestHandler::RequestHandler()
     , transport_router_ptr_(std::make_unique<TR::TransportRouter>(TR::TransportRouter{}))
     , map_renderer_ptr_(std::make_unique<MR::MapRenderer>(MR::MapRenderer{}))
     , serializer_ptr_(std::make_unique<serialization::Serializer>(serialization::Serializer{})) {
-
 }
 
-RequestHandler::~RequestHandler() {}
+RequestHandler::~RequestHandler() = default;
 
 RequestHandler::RequestHandler(serialization::Serializer&& serializer)
     : serializer_ptr_(std::make_unique<serialization::Serializer>(std::move(serializer))) {
@@ -44,3 +43,5 @@ RequestHandlerSerializer::~RequestHandlerSerializer() {
 RequestHandlerDeserializer::RequestHandlerDeserializer()
     : RequestHandler(serialization::Serializer{}) {
 }
+
+RequestHandlerDeserializer::~RequestHandlerDeserializer() = default;

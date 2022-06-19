@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+bin/
+build/
+obj/
+log/
+tmp/
+tst/
+protobuf_content/
+*~
+*.
